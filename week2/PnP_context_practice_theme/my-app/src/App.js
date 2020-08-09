@@ -17,23 +17,21 @@ class App extends React.Component {
         return (
             <div>
                 <Header />
-                <main>
-                    <UserContextConsumer>
-                        {username => (
-                            <p className="main">No new notifications, {username}! 🎉</p>
+                <UserContextConsumer>
+                        {({username, changeUsername}) => (
+                            <main>  
+                                <p className="main">No new notifications, {username}! 🎉</p>
+                                <input
+                                    type="text"
+                                    name="newUsername"
+                                    placeholder="New username"
+                                    value={this.state.newUsername}
+                                    onChange={this.handleChange}
+                                />
+                                <button onClick={() => changeUsername(this.state.newUsername)}>Change Username</button>
+                            </main> 
                         )}
                     </UserContextConsumer>
-                </main>
-                
-                <input
-                    type="text"
-                    name="username"
-                    placeholder="New username"
-                    value={this.state.newUsername}
-                    onChange={this.handleChange}
-                />
-                <button>Change Username</button>
-                
             </div>
         )
     }
