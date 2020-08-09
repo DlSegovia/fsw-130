@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  padding: 20px;
+  background-color: #333333;
+  color: rgb(230, 124, 124);
+}
+
+.list-group{
+  list-style-type: none;
+  float: right;
+  
+}
+
+.list-group-item{
+  display: inline-block;
+  padding-right: 10px;
+}
+
+main {
+  padding: 20px;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  margin: 10px;
+}
+
+.dark-theme {
+  background-color: #333333;
+  color: whitesmoke;
+}
+
+.light-theme {
+  background-color: whitesmoke;
+  color: #333333;
+}
