@@ -1,0 +1,67 @@
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  outline: none;
+}
+
+h1 {
+  margin: 5px;
+}
+
+p {
+  margin: 5px;
+}
+
+.form {
+  text-align: center;
+  position: fixed;
+  background-color: cadetblue;
+  left: 12em;
+  border: 1px solid #333;
+  padding: 10px;
+  margin: 5px;
+  width: 70%;
+  height: 35%;
+}
+
+input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  margin: 10px 5px;
+}
+
+.add-btn {
+  padding: 7px;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-top: 75px;
+}
+
+.delete-btn {
+  background-color: firebrick;
+  color: whitesmoke;
+}
+
+.edit-btn {
+  background-color: cornflowerblue;
+  color: whitesmoke;
+}
+
+.uglyThing-cont {
+  background-color: cadetblue;
+}
+
+.uglyThing {
+  border: 1px solid #333;
+  padding: 10px;
+  margin: 5px;
+}
+
+.filter-form {
+  width: 200px;
+}

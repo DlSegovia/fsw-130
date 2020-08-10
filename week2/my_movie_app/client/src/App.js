@@ -52,9 +52,9 @@ export default function App() {
   return (
     <div>
       <div className="movie-container">
-        <MovieForm 
-        submit={addMovie} 
-        btnText="Add Movie" 
+        <MovieForm
+          submit={addMovie}
+          btnText="Add Movie"
         />
 
         <h4>Filter by Genre</h4>
