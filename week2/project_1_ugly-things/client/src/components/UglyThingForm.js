@@ -4,7 +4,7 @@ export default function AddMovieForm(props) {
   const initInputs = { 
     title: props.title || "", 
     imgURL: props.imgURL || "", 
-    discription: props.discription || "" 
+    description: props.description || "" 
   };
   const [inputs, setInputs] = useState(initInputs);
 
@@ -28,16 +28,16 @@ export default function AddMovieForm(props) {
         placeholder='Title' />
 
       <input type='img'
-        name='imgURl'
+        name='imgURL'
         value={inputs.imgURL}
         onChange={handleChange}
         placeholder='Img URL' />
 
       <input type='text'
-        name='discription'
-        value={inputs.discription}
+        name='description'
+        value={inputs.description}
         onChange={handleChange}
-        placeholder='Discription' />
+        placeholder='Description' />
 <br/>
       <button className='add-btn'>{props.btnText}</button>
     </form>

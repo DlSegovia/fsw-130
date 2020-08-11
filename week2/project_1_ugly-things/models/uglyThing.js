@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const schema = mongoose.Schema
+const Schema = mongoose.Schema
 
 //Blueprint//
 const uglyThingSchema = new mongoose.Schema({
@@ -10,7 +10,7 @@ const uglyThingSchema = new mongoose.Schema({
   imgURL: {
     imageURL: String
   },
-  discription: {
+  description: {
     type: String
   }
 })

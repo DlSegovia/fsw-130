@@ -15,16 +15,29 @@ p {
   margin: 5px;
 }
 
+.uglyThing-cont {
+  position: fixed;
+  
+  width: 70%;
+  height: 30%;
+  left: 15%;
+}
+
 .form {
   text-align: center;
-  position: fixed;
-  background-color: cadetblue;
-  left: 12em;
-  border: 1px solid #333;
+  background-color: silver;
+  box-shadow: 5px 10px 8px 10px #888888;
+  padding: 10px;
+  height: 100%;
+  margin: 5px;
+}
+
+.uglyThing {
+  text-align: center;
+  background-color: silver;
+  box-shadow: 8px 10px 8px 10px #888888;
   padding: 10px;
   margin: 5px;
-  width: 70%;
-  height: 35%;
 }
 
 input {
@@ -32,14 +45,14 @@ input {
   font-size: 16px;
   border: 1px solid #333;
   border-radius: 8px;
-  margin: 10px 5px;
+  margin: 7px;
 }
 
 .add-btn {
-  padding: 7px;
+  padding: 5px;
+  margin-top: 7%;
   border-radius: 4px;
   font-size: 16px;
-  margin-top: 75px;
 }
 
 .delete-btn {
@@ -50,18 +63,4 @@ input {
 .edit-btn {
   background-color: cornflowerblue;
   color: whitesmoke;
-}
-
-.uglyThing-cont {
-  background-color: cadetblue;
-}
-
-.uglyThing {
-  border: 1px solid #333;
-  padding: 10px;
-  margin: 5px;
-}
-
-.filter-form {
-  width: 200px;
 }
