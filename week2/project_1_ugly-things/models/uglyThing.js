@@ -8,7 +8,7 @@ const uglyThingSchema = new mongoose.Schema({
     required: true
   },
   imgURL: {
-    imageURL: String
+    type: String
   },
   description: {
     type: String

@@ -32,12 +32,14 @@ export default function AddMovieForm(props) {
         value={inputs.imgURL}
         onChange={handleChange}
         placeholder='Img URL' />
+      
 
       <input type='text'
         name='description'
         value={inputs.description}
         onChange={handleChange}
         placeholder='Description' />
+       
 <br/>
       <button className='add-btn'>{props.btnText}</button>
     </form>
