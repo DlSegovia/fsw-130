@@ -2,14 +2,14 @@ const express = require('express')
 const uglyThingRouter = express.Router()
 const UglyThing = require('../models/uglyThing.js')
 
-
+console.log(UglyThing)
 // Get All
 uglyThingRouter.get("/", (req, res, next) => {
   UglyThing.find((err, uglyThing) =>{
     if(err){
       res.status(500)
       return next(err)
-    }
+    }console.log(uglyThing)
     return res.status(200).send(uglyThing)
   })
 })

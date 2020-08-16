@@ -15,4 +15,4 @@ const uglyThingSchema = new mongoose.Schema({
   }
 })
 
-module.exports = mongoose.model('UgltThing', uglyThingSchema)
+module.exports = mongoose.model('UglyThing', uglyThingSchema)

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function AddMovieForm(props) {
+export default function AddUglyThingForm(props) {
   const initInputs = { 
     title: props.title || "", 
     imgURL: props.imgURL || "", 

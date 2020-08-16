@@ -4,18 +4,18 @@
   import UglyThingForm from "./components/UglyThingForm.js";
 
   export default function App() {
-    const [uglyThings, setUglyThings] = useState([])
+    const [uglyThing, setUglyThing] = useState([])
 
-    function getUglyThings() {
+    function getUglyThing() {
       axios.get("http://localhost:7000/uglyThing")
-        .then(res => setUglyThings(res.data))
+        .then(res => setUglyThing(res.data))
         .catch(err => console.log(err.response.data.errMsg))
     }
 
     function addUglyThing(newUglyThing) {
       axios.post("http://localhost:7000/uglyThing", newUglyThing)
         .then(res => {
-          setUglyThings(prevUglyThings => [...prevUglyThings, res.data])
+          setUglyThing(prevUglyThing => [...prevUglyThing, res.data])
         })
         .catch(err => console.log(err))
     }
@@ -24,7 +24,7 @@
       
       axios.delete(`http://localhost:7000/uglyThing/${uglyThingId}`)
         .then(res => {
-          setUglyThings(prevUglyThings =>
+          setUglyThing(prevUglyThings =>
             prevUglyThings.filter(uglyThing => uglyThing._id !== uglyThingId)
           )
         })
@@ -32,17 +32,17 @@
     }
 
     function editUglyThing(updates, uglyThingId) {
-      axios.put(`http://localhost:7000/uglyThings/${uglyThingId}`, updates)
+      axios.put(`http://localhost:7000/uglyThing/${uglyThingId}`, updates)
         .then(res => {
-          setUglyThings(prevUglyThings =>
-            prevUglyThings.map(uglyThing => (uglyThing._id !== uglyThingId ? uglyThing : res.data))
+          setUglyThing(prevUglyThing =>
+            prevUglyThing.map(uglyThing => (uglyThing._id !== uglyThingId ? uglyThing : res.data))
           )
         })
         .catch(err => console.log(err))
     }
 
     useEffect(() => {
-    getUglyThings()
+    getUglyThing()
     }, [])
 
     return (
@@ -52,7 +52,7 @@
             submit={addUglyThing}
             btnText='Add UglyThing'/>
 
-            {uglyThings.map(uglyThing => (
+            {uglyThing.map(uglyThing => (
               <UglyThing
               {...uglyThing}
               key={uglyThing.titimgaele}
