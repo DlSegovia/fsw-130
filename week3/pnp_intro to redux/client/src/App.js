@@ -1,35 +1,21 @@
 import React from 'react'
-import {Stylesheet, Text, View} from ''
+// import { createStore } from 'redux'
+import Timer from './timer'
 
 
-const DATA = {
-    timer: 1234567,
-    laps: [12345, 2345, 34567, 98765],
-}
-
-export default class App extends React.Component {
+class Application extends React.Component {
     render() {
-        return(
-            <view style={styles.container}>
-                <text>Open up App.js to start working on your app!</text>
-                <text>Changes you make will automatically reload.</text>
-                <text>Shake your phone to open the developer menu.</text>
-            </view>
-        )
+      return (
+        <div>
+           <Timer updateInterval={0} />
+        </div>
+      );
     }
-}
-
-const styles = Stylesheet.create ({
-    container: {
-        flex: 1,
-        backgroundColor: '#fffff',
-        alignItems: 'center',
-        justtifyContent: 'center', 
-    },
-})
-
+  }
   
-
+ 
+  
+  
 
 
 // function Lap({ number, interval }) {
@@ -74,4 +60,7 @@ const styles = Stylesheet.create ({
 //     }
 // }
 
-// 
+
+
+
+export default Application
