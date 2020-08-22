@@ -6,6 +6,7 @@ import { startTimer, stopTimer, resetTimer } from './redux/actions';
 // Helper function that takes store state
 // and returns the current elapsed time
 function getElapsedTime(baseTime, startedAt, stoppedAt = new Date().getTime()) {
+
   if (!startedAt) {
     return 0;
   } else {
@@ -27,20 +28,26 @@ class Timer extends React.Component {
     const elapsed = getElapsedTime(baseTime, startedAt, stoppedAt);
 
     return (
-      <div className='container'>
-        <div>Time: {elapsed}</div>
-        <div className='buttons'>
-          <button onClick={() => {
-            this.props.dispatch(startTimer(elapsed))
-          }}>
+      <div className= 'container'>
+        <div className='clock'>
+         .0 {elapsed / 3600000 < 1 ? " " : Math.floor(elapsed / 3600000) + " "}
+         .0 {elapsed / 60000 < 1 ? " " : Math.floor(elapsed / 60000) + " "}
+         .0 {Math.floor(elapsed / 1000)}
+         .0 {elapsed}
+        </div>
+        <div className='btn-row'>
+          <button className='play'
+            onClick={() => {
+              this.props.dispatch(startTimer(elapsed))
+            }}>
             Start</button>
-          <button onClick={() =>
-            this.props.dispatch(stopTimer())
-          }>
+          <button className='stop'
+            onClick={() => this.props.dispatch(stopTimer())
+            }>
             Stop</button>
-          <button onClick={() =>
-            this.props.dispatch(resetTimer())
-          }>
+          <button className='reset'
+            onClick={() => this.props.dispatch(resetTimer())
+            }>
             Reset</button>
         </div>
       </div>

@@ -1,10 +1,6 @@
 
-
-
-
-
 const initialTimer = {
-  startedAt: "",
+  startedAt: 0,
   stoppedAt: "",
   pauseAt: "",
   baseTime: "",
