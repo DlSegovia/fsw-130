@@ -1,22 +1,22 @@
 const redux = require("redux")
 
 
-function addContacts(contact) {
+function addContact(contact) {
     return {
-        type: "ADD_CONTACTS",
-        payload: thing
+        type: "ADD_CONTACT",
+        payload: contact
     }
 }
 
 function removeContact(contact) {
     return {
         type: "REMOVE_CONTACT",
-        payload: thing
+        payload: contact
     }
 }
 
 const initialState = {
-    contact: []
+    contacts: []
 }
 
 function reducer(state = initialState, action) {
@@ -29,7 +29,7 @@ function reducer(state = initialState, action) {
         case "REMOVE_CONTACT": {
             const arrCopy = [...state.contacts]
             
-            const updatedArr = state.contacts.filter(thing => thing.toLowerCase() !== action.payload.toLowerCase())
+            const updatedArr = state.contacts.filter(thing => thing.id !== action.payload)
             return {
                 ...state,
                 contacts: updatedArr
@@ -45,8 +45,8 @@ store.subscribe(() => {
     console.log(store.getState())
 })
 
-store.dispatch(addContact("Raindrops on roses"))
-store.dispatch(addContact("Whiskers on kittens"))
+store.dispatch(addContact({name: "Raindrops on roses", phone: 123, id: 1}))
+store.dispatch(addContact({name: "Whiskers on kittens", phone: 478, id: 2}))
 
 
-store.dispatch(removeContact("raindrops on roses"))
+store.dispatch(removeContact( 1))
