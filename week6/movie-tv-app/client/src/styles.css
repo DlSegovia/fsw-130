@@ -58,6 +58,18 @@ button {
   margin: 5px;
 }
 
+.tvShow-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 32px;
+}
+
+.tvShow {
+  border: 1px solid #333;
+  padding: 10px;
+  margin: 5px;
+}
+
 .filter-form {
   width: 200px;
 }

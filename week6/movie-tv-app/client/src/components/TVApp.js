@@ -51,7 +51,7 @@ export default function App() {
 
   return (
     <div>
-      <div className="TVShow-container">
+      <div className="tvShow-container">
         <TVShowForm
           submit={addTVShow}
           btnText="Add TVShow"
