@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import TVShowForm from "./TVShowForm.js";
+import AddShowForm from "./ShowForm.js";
 
-export default function TVShow(props) {
+export default function Show(props) {
   const { title, genre, episodeNumber, _id } = props;
   const [editToggle, setEditToggle] = useState(false);
   return (
@@ -15,16 +15,14 @@ export default function TVShow(props) {
           onClick={() => props.deleteTvShow(_id)}>
             Delete
           </button>
-          <button
-            className="edit-btn"
-            onClick={() => setEditToggle(prevToggle => !prevToggle)}
-          >
+          <button className="edit-btn" 
+          onClick={() => setEditToggle(prevToggle => !prevToggle)}>
             Edit
           </button>
         </>
       ) : (
         <>
-          <TVShowForm
+          <AddShowForm
             title={title}
             genre={genre}
             Episode Number={episodeNumber}

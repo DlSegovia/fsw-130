@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 // Blueprint
-const tvShowSchema = new mongoose.Schema({
+const showSchema = new mongoose.Schema({
   title: {
     type: String,
     required: true
@@ -17,4 +17,4 @@ const tvShowSchema = new mongoose.Schema({
   },
 })
 
-module.exports = mongoose.model("TVShow", tvShowSchema)
+module.exports = mongoose.model("Show", showSchema)

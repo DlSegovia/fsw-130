@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function AddTVShowForm(props) {
+export default function AddShowForm(props) {
   const initInputs = { 
     title: props.title || "", 
     genre: props.genre || "", 
@@ -17,6 +17,7 @@ export default function AddTVShowForm(props) {
     e.preventDefault();
     props.submit(inputs, props._id);
     setInputs(initInputs);
+    
   }
 
   return (
@@ -37,7 +38,7 @@ export default function AddTVShowForm(props) {
       />
       <input
         type="text"
-        name="episode"
+        name="episodeNumber"
         value={inputs.episodeNumber}
         onChange={handleChange}
         placeholder="Episode Number"

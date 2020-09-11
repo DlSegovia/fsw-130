@@ -26,7 +26,7 @@ app.get("/", function(req,res, next){
   req.json({msg:"This is CORS-enabled for all origins!" })
 })
 app.use("/movies", require("./routes/movieRouter.js"))
-app.use("/tvShows", require("./routes/tvShowRouter.js"))
+app.use("/shows", require("./routes/showRouter.js"))
 
 // Error handler
 app.use((err, req, res, next) => {

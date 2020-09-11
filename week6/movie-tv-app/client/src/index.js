@@ -8,12 +8,10 @@ import './styles.css'
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <nav><Link to ="/">Movies</Link> <Link to = "/TVApp">TVShows </Link></nav>
+      <nav className='nav'><Link to ="/">Movies</Link> <Link to = "/TVApp">TVShows </Link></nav>
       <Switch>
         <Route exact path="/" render={() => <App />}/>
         <Route exact path="/TVApp" render={() => <TVApp />}/>
-      {/* <App />
-      <TVApp /> */}
       </Switch>
     </Router>
   </React.StrictMode>,

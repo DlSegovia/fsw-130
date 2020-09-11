@@ -1,79 +1,66 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import TVShow from "./TVShow.js";
-import TVShowForm from "./TVShowForm.js";
+import Show from './Show';
+import AddShowForm from './ShowForm';
 
-export default function App() {
-  const [tvShows, setTVShows] = useState([]);
+export default function TVApp() {
+  const [shows, setShows] = useState([]);
 
-  function getTVShows() {
-    axios.get("http://localhost:9000/TVShow")
-      .then(res => setTVShows(res.data))
+ function getShows() {
+    axios.get("http://localhost:9000/shows")
+      .then(res => setShows(res.data))
       .catch(err => console.log(err.response.data.errMsg));
   }
-
-  function addTVShow(newTVShow) {
-    axios.post("http://localhost:9000/TVShow", newTVShow)
+  function addShow(newShow) {
+    axios.post("http://localhost:9000/shows", newShow)
       .then(res => {
-        setTVShows(prevTVShow => [...prevTVShow, res.data]);
+        setShows(prevShows => [...prevShows, res.data]);
       })
       .catch(err => console.log(err));
   }
 
-  function deleteTVShow(TVShowId) {
-    axios.delete(`http://localhost:9000/TVShow/${TVShowId}`)
+  function deleteShow(showId) {
+    axios.delete(`http://localhost:9000/shows/${showId}`)
       .then(res => {
-        setTVShows(prevTVShow =>
-          prevTVShow.filter(TVShow => TVShow._id !== TVShowId)
+        setShows(prevShows =>
+          prevShows.filter(show => show._id !== showId)
         );
       })
       .catch(err => console.log(err));
   }
 
-  function editTVShow(updates, TVShowId) {
+  function editShow(updates, showId) {
     axios
-      .put(`http://localhost:9000/TVShow/${TVShowId}`, updates)
+      .put(`http://localhost:9000/shows/${showId}`, updates)
       .then(res => {
-        setTVShows(prevTVShow =>
-          prevTVShow.map(TVShow => (TVShow._id !== TVShowId ? TVShow : res.data))
+        setShows(prevShows =>
+          prevShows.map(show => (show._id !== showId ? show : res.data))
         );
       })
       .catch(err => console.log(err));
   }
-
-  // function handleFilter(e) {
-  //   console.log(e.target.value);
-  // }
 
   useEffect(() => {
-    getTVShows();
+    getShows();
   }, []);
 
   return (
     <div>
-      <div className="tvShow-container">
-        <TVShowForm
-          submit={addTVShow}
-          btnText="Add TVShow"
+      <div className="show-container">
+        <AddShowForm
+          submit={addShow}
+          btnText="Add TV Show"
         />
 
-        {/* <h4>Filter by Genre</h4>
-        <select onChange={handleFilter} className="filter-form">
-          <option value="reset">All TVShow</option>
-          <option value="action">Action</option>
-          <option value="fantasy">Fantasy</option>
-          <option value="horror">Horror</option>
-        </select> */}
-
-        {TVShow.map(TVShow => (
-          <TVShow
-            {...TVShow}
-            key={TVShow.title}
-            deleteTVShow={deleteTVShow}
-            editTVShow={editTVShow}
+        {shows.map(show => 
+          <Show
+            {...show}
+            key={show.title}
+            deleteTvShow={deleteShow}
+            editTvShow={editShow}
           />
-        ))}
+        )}
       </div>
     </div>
   )
-}
+} 
